@@ -1,0 +1,3 @@
+[submodule "app/starlink-grpc-tools"]
+	path = app/starlink-grpc-tools
+	url = https://github.com/sparky8512/starlink-grpc-tools
