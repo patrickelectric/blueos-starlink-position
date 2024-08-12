@@ -23,6 +23,8 @@ class Starlink:
         for line in result.stdout.splitlines():
             if ":" in line:
                 key, value = line.split(":", 1)
+                if not value:
+                    return None
                 data[key.strip()] = float(value.strip())
 
         return data

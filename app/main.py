@@ -38,6 +38,8 @@ async def periodic() -> None:
         mavlink = Mavlink2Rest()
         try:
             position = Starlink.position()
+            if not position or position == {}:
+                raise Exception("Position appears to be not available, enable it in app or wait")
             mavlink.send_gps_input_simple(
                 position["latitude"],
                 position["longitude"],
